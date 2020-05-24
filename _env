@@ -1,0 +1,22 @@
+# Environment Config
+
+# !!!!!!!!!!!!!!!!!!!!!!!!!!!!!! WARNING !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+# This file needs to be renamed `.env` in the actual Glitch deployment.
+# The `.env` file will NOT be checked in by Glitch (or locally, because
+# of `.gitignore`). DO NOT store GH_TOKEN or WEBHOOK_TOKEN in this file
+# and/or in GitHub!
+# !!!!!!!!!!!!!!!!!!!!!!!!!!!!!! WARNING !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+# store your secrets and config variables in here
+# only invited collaborators will be able to see your .env values
+
+# reference these in your code with process.env.SECRET
+
+GH_USER=yakcollective-robot
+GH_REPO= The-Yak-Collective/yakcollective-ifttt-connector 
+GH_BRANCH=warren-structure
+GH_TOKEN=
+WEBHOOK_TOKEN=
+
+# note: .env is a shell file so there can't be spaces around =
+ # Scrubbed by Glitch 2020-05-24T15:18:08+0000
