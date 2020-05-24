@@ -41,15 +41,18 @@ app.post("/", (req, res) => {
 
   // Cleanup formatting of incoming post, replace special chracters, etc.
   //
-  //   1. Replace ||| with newlines
-  //   2. Replace |@ with literal |
-  //   3. Replace @@@ with <!--more-->
-  //   4. Strip empty elements at the beginning of any lists
-  //   5. Strip empty elements at the end of any lists
-  //   6. Replace any double <p><p> with a single <p>
-  //   7. Replace any double </p></p> with a single </p>
-  //   8. Replace the sequence .### with just . (since this implies that we don't need ###)
-  //   9. Finally, replace ### with ...
+  //    1. Replace ||| with newlines
+  //    2. Replace |@ with literal |
+  //    3. Replace @@@ with <!--more-->
+  //    4. Strip empty elements at the beginning of any lists
+  //    5. Strip empty elements at the end of any lists
+  //    6. Replace any double <p><p> with a single <p>
+  //    7. Replace any double </p></p> with a single </p>
+  //    8. Replace { with &#x007b; to work around Jekyll parsing weirdness.
+  //    9. Replace } with &#x007d; to work around Jekyll parsing weirdness.
+  //   10. Replace % with &#x0023; to work around Jekyll parsing weirdness.
+  //   11. Replace the sequence .### with just . (since this implies that we don't need ###)
+  //   12. Finally, replace ### with ...
   //
   var postContent = req.body.replace(/\|\|\|/g, "\n");
   postContent = postContent.replace(/\|@/g, "|");
@@ -58,6 +61,9 @@ app.post("/", (req, res) => {
   postContent = postContent.replace(/, ?("")? \]/, " ]");
   postContent = postContent.replace(/<p><p>/, "<p>");
   postContent = postContent.replace(/<\/p><\/p>/, "</p>");
+  postContent = postContent.replace(/{/, "&#x007b;");
+  postContent = postContent.replace(/}/, "&#x007d;");
+  postContent = postContent.replace(/%/, "&#x0023;");
   postContent = postContent.replace(/\. *###/, ".");
   postContent = postContent.replace(/###/, "...");
 
