@@ -11,8 +11,8 @@
 
 # Reference these in your code with `process.env.VARIABLE`
 
-GH_USER=yakcollective-robot
-GH_REPO=The-Yak-Collective/yakcollective-ifttt-connector 
+GH_USER_OR_TEAM=The-Yak-Collective
+GH_REPO=yakcollective
 GH_BRANCH=warren-structure
 GH_TOKEN=
 WEBHOOK_TOKEN=

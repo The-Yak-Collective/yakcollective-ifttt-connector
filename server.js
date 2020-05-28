@@ -1,15 +1,15 @@
 // Load required packages
 //
-var express = require("express");
-var bodyParser = require("body-parser");
-var moment = require("moment");
-var chrono = require("chrono-node");
-var accents = require('remove-accents');
-var { Octokit } = require("@octokit/rest");
+const express = require("express");
+const bodyParser = require("body-parser");
+const moment = require("moment");
+const chrono = require("chrono-node");
+const accents = require('remove-accents');
+const { Octokit } = require("@octokit/rest");
 
 // Init GitHub connection
 //
-var github = new Octokit({
+const github = new Octokit({
   auth: process.env.GH_TOKEN
 });
 
@@ -101,8 +101,8 @@ app.post("/", (req, res) => {
 
   // Post content to GitHub
   //
-  github.repos.createFile({
-    owner: process.env.GH_USER,
+  github.repos.createOrUpdateFile({
+    owner: process.env.GH_USER_OR_TEAM,
     repo: process.env.GH_REPO,
     branch: process.env.GH_BRANCH,
     path: postPath + "/" + slugTitle + ".html",

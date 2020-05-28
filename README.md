@@ -5,7 +5,7 @@ A script that creates Jekyll posts in a Github repo from IFTTT events, using the
 ## Setup
 
 - Copy `_env` to `.env`.
-- Set `GH_USER`, `GH_REPO`, and `GH_BRANCH` appropriately.
+- Set `GH_USER_OR_TEAM`, `GH_REPO`, and `GH_BRANCH` appropriately.
 - Set `GH_TOKEN` to a [GitHub **Personal Access Token**](https://github.com/settings/tokens).
 - Set `WEBHOOK_TOKEN` to a shared secret of your choice (the output of `uuidgen` works well).  We'll use this to verify requests are coming from our webhook.
 - Go to IFTTT and create a new applet. For the "that" action, choose the **Webhooks** service, and then the **Make a web request** option.  Fill in the fields as follows:
