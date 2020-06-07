@@ -1,5 +1,7 @@
 # yakcollective-ifttt-connector
 
+**This repo has been superceded by the Netlify Functions in the `yakcollective` repository.**
+
 A script that creates Jekyll posts in a Github repo from IFTTT events, using the IFTTT Webhook action. Lightly modified from [the example connector](https://glitch.com/~ifttt-ghpages) [described on `webrender.net`](https://webrender.net/2017/11/23/automate-github-pages-ifttt-glitch.html)
 
 ## Setup
